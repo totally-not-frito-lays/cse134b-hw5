@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Crud</title>
+    <link rel="stylesheet" href="style/styledcrud.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@800&family=Oxygen:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dfc18fddcc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Crud Blog Post</h1>
+    <button id="add">Add</button>
+    <dialog>
+        <form method="dialog">
+            <label for="title">Title</label>
+            <br>
+            <input type="text" name="title" id="title">
+            <br>
+            <label for="date">Date</label>
+            <br>
+            <input type="date" name="date" id="date">
+            <br>
+            <label for="summary">Summary</label>
+            <br>
+            <textarea name="summary" id="summary" cols="30" rows="5">"Write something here"</textarea>
+            <br>
+            <button type="reset" id="reset">Cancel</button>
+            <button type="button" id="ok">OK</button>
+        </form>
+    </dialog>
+    <output id="post-list">
+        <!--This is where the posts go-->
+    </output>
+    <script src="scripts/styled-crud-deletePost.js"></script>
+    <script src="scripts/styled-crud-addDialog.js" type="module"></script>
+    <script src="scripts/styled-crud-editPost.js"></script>
+    <script src="scripts/styled-crud-blog.js" type="module"></script>
+
+</body>
+</html>

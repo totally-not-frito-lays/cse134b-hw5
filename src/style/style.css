@@ -1,0 +1,294 @@
+/* Normal text */
+@font-face {
+    font-family: 'Quicksand', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap')
+}
+
+/* Normal Text */
+@font-face {
+    font-family: 'Oxygen';
+    src: url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+}
+
+/* Section titles */
+@font-face {
+    font-family: 'LibreFranklin';
+    src: url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@800&family=Oxygen:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+}
+
+/* H1 title */
+@font-face {
+    font-family: 'Star Jedi';
+    src: url('/src/fonts/StarJediRounded.woff');
+    font-weight: normal;
+}
+
+/* Defines CSS vars */
+:root {
+    --title-font-color: #ffe844;
+    --text-font-color: #ffffff;
+    --section-font: "Oxygen";
+}
+
+/* content */
+
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #141d27, #1b1e30, #1d202e, #2d303d);
+    /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
+    /* background-image: url("../assets/planet.png");
+    background-size: cover; */
+    /* background-attachment:fixed; */
+    color: #ffffff;
+    margin: 0;
+    padding: 1%;
+    animation: gradient 5s ease infinite;
+}
+
+main {
+    margin: 3%;
+    overflow-x: hidden;
+}
+
+/* Flex box */
+.displaycase {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    border: #ffe844;
+    border-radius: 20px;
+    border-style:double;
+    padding: 1%;
+}
+
+section * {
+    text-align: center;
+    padding: 1%;
+}
+
+section #lofi {
+    height: 10em;
+    width: 15em;
+}
+
+.project {
+    flex: 1 0 auto;
+    background-color: rgba(87, 86, 153, 0.124);
+    border-radius: 100px;
+    margin: 1vw;
+    padding: 3vw;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/* table */
+table {
+    margin: 1vw;
+    padding: 10%;
+}
+
+td {
+    line-height: 2em;
+    margin: 5%;
+    padding: 1%;
+    font-family: "Quicksand";
+}
+
+aside {
+    font-family: "Quicksand";
+}
+
+/* media */
+ol {
+    list-style: upper-roman inside;
+    /* list-style-type: upper-roman; */
+    /* list-style-position: inside; */
+}
+
+/* text */
+
+h1 {
+    font-family: var(--section-font);
+    font-weight: 700;
+    font-size: 15vw;
+    color: var(--title-font-color);
+    filter: drop-shadow(0 0 10px white);
+}
+
+h2 {
+    font-family: var(--section-font);
+    font-size: 2rem;
+}
+
+h3, h4 {
+    font-family: var(--section-font);
+    font-size: 1.5em;
+}
+
+p {
+    font-family: "Quicksand";
+}
+
+a {
+    color: aqua;
+}
+
+/* Dividers */
+hr {
+    border: 3px solid yellow;
+    border-radius: 5px;
+}
+
+/* Animation CSS */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#subtitle {
+    font-size: 2rem;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#dino {
+    width: 15vw;
+    height: 15vw;
+    transition: width 2s, height 2s, transform 3s;
+    animation-duration: 3s;
+    animation-name: slideright;
+}
+#dino:hover {
+    animation-duration: 3s;
+    animation-name: slideright;
+    transform: rotate(2.5turn);
+}
+@keyframes slideright {
+    from {
+        margin-right: 100%;
+    }
+
+    to {
+        margin-right: 50%;
+    }
+}
+
+.chip {
+    transition: ease-in-out;
+}
+
+
+/* Parallax*/
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.parallax__layer--base {
+    transform: translateZ(0);
+}
+.parallax__layer--back {
+    transform: translateZ(-1px);
+}
+
+/* Shiny stuff */
+.shiny {
+    color: white;
+    position: relative;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  .shiny::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--y, 0) * 1px - 50px);
+    left: calc(var(--x, 0) * 1px - 50px);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(white, #3984ff00 80%);
+  
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .shiny:hover::after {
+    opacity: 0.4;
+  }
+/* chip rain
+body {
+  }
+  
+  @function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+  
+  .snow {
+    $total: 200;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+  
+    @for $i from 1 through $total {
+      $random-x: random(1000000) * 0.0001vw;
+      $random-offset: random_range(-100000, 100000) * 0.0001vw;
+      $random-x-end: $random-x + $random-offset;
+      $random-x-end-yoyo: $random-x + ($random-offset / 2);
+      $random-yoyo-time: random_range(30000, 80000) / 100000;
+      $random-yoyo-y: $random-yoyo-time * 100vh;
+      $random-scale: random(10000) * 0.0001;
+      $fall-duration: random_range(10, 30) * 1s;
+      $fall-delay: random(30) * -1s;
+  
+      &:nth-child(#{$i}) {
+        opacity: random(10000) * 0.0001;
+        transform: translate($random-x, -10px) scale($random-scale);
+        animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+      }
+  
+      @keyframes fall-#{$i} {
+        #{percentage($random-yoyo-time)} {
+          transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+        }
+  
+        to {
+          transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+        }
+      }
+    }
+  }
+   */
