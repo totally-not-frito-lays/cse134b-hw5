@@ -7,7 +7,7 @@
  * @param {object} event Grabs the item that calls this function
  */
 function showAddDialog(event) {
-    document.querySelector('dialog').showModal();
+    document.querySelector('#addBlog').showModal();
 }
 
 /**
@@ -16,7 +16,7 @@ function showAddDialog(event) {
  */
 function closeAddDialog(event) {
     // Closes the dialog
-    document.querySelector('dialog').close();
+    document.querySelector('#addBlog').close();
 }
 
 /**
@@ -29,6 +29,7 @@ function confirmAddDialog(event) {
     // object literal stores the values
     let post = {
         title: document.querySelector('#title').value,
+        author: document.querySelector('#author').value,
         summary: document.querySelector('#summary').value,
         date: document.querySelector('#date').value,
         id: (new Date().getTime()).toString()
@@ -61,6 +62,7 @@ function createPostObject(post) {
     let postOut = 
         `<article id=\"${post.id}\">
             <h2>${post.title}</h2>
+            <p class="author">${post.author}</p>
             <p class="date">${post.date}</p>
             <p class="summary">${post.summary}</p>
             <br>

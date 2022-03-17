@@ -5,13 +5,13 @@
 function deletePostArticle(event) {
     let post = {
         // select the child
-        title: event.parentNode.querySelector('h2').value,
-        summary: event.parentNode.querySelector('p').value,
+        title: document.querySelector('#title').value,
+        author: document.querySelector('#author').value,
+        summary: document.querySelector('#summary').value,
+        date: document.querySelector('#date').value,
         id: event.parentNode.id
     };
-
     deletePostStorage(post);
-
     event.parentNode.remove();
 }
 

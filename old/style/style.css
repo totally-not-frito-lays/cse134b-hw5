@@ -31,7 +31,6 @@
 }
 
 /* content */
-
 body {
     width: 100%;
     height: 100%;
@@ -42,17 +41,18 @@ body {
     /* background-attachment:fixed; */
     color: #ffffff;
     margin: 0;
-    padding: 1%;
+    padding: 0%;
     animation: gradient 5s ease infinite;
+    overflow-x: hidden;
 }
 
 main {
     margin: 3%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* Flex box */
-.displaycase {
+.display-case {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -75,7 +75,8 @@ section #lofi {
 .project {
     flex: 1 0 auto;
     background-color: rgba(87, 86, 153, 0.124);
-    border-radius: 100px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px #000000;
     margin: 1vw;
     padding: 3vw;
     display: flex;
@@ -83,10 +84,15 @@ section #lofi {
     align-items: center;
 }
 
+.project > nav {
+    display: flex;
+    flex-direction: column;
+}
+
 /* table */
 table {
     margin: 1vw;
-    padding: 10%;
+    padding: 5%;
 }
 
 td {
@@ -107,14 +113,35 @@ ol {
     /* list-style-position: inside; */
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.project-small {
+    height: 20rem;
+    width: 20rem;
+}
+
+.project-large {
+    height: 40rem;
+    width: 30rem;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
 /* text */
 
 h1 {
     font-family: var(--section-font);
+    /* font-family: Star Jedi; */
     font-weight: 700;
     font-size: 15vw;
     color: var(--title-font-color);
-    filter: drop-shadow(0 0 10px white);
+    filter: drop-shadow(0 0 10px rgb(186, 186, 186));
 }
 
 h2 {
@@ -139,6 +166,7 @@ a {
 hr {
     border: 3px solid yellow;
     border-radius: 5px;
+    width: 100%;
 }
 
 /* Animation CSS */

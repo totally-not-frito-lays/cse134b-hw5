@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax Experiment</title>
+  <script src="methodtest.js"></script>
+</head>
+<body>
+  <h1>Method Test Form</h1>
+  <h2>Navigate Back</h2>
+    <a href="/src/index.html">Home Page</a>
+  <h2>Form</h2>
+    <form action="https://httpbin.org/get" method="GET" target="#response">
+      <!-- Basic Form Entries -->
+      <label for="id">ID:</label><br>
+        <input type="text" id="id" name="id"><br>
+      <label for="article_name">Article Name:</label><br>
+        <input type="text" id="article_name" name="article_name"><br>
+      <label for="summary">Summary:</label><br>
+        <textarea rows="10" cols="40" id="summary" name="summary"></textarea><br>
+      <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date"><br>
+
+      <!-- AJAX Requests -->
+      <button type="button" id="postBtn">Post</button>
+      <button type="button" id="getBtn">Get</button>
+      <button type="button" id="putBtn">Put</button>
+      <button type="button" id="deleteBtn">Delete</button>
+    </form>
+
+    <!-- AJAX Fetch -->
+    <div id="responseOutput">&nbsp;</div>
+
+    <output id="response"></output>
+</body>
+</html>

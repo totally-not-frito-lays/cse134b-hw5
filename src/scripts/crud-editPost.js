@@ -6,31 +6,40 @@
 function editPostArticle(event) {
     // Edit title
     // toggle class styling and enables editing
+
+    // title
     event.parentNode.children[0].classList.toggle('editable');
     event.parentNode.children[0].toggleAttribute('contenteditable');
 
+    // author
     event.parentNode.children[1].classList.toggle('editable');
     event.parentNode.children[1].toggleAttribute('contenteditable');
 
+    // date
     event.parentNode.children[2].classList.toggle('editable');
     event.parentNode.children[2].toggleAttribute('contenteditable');
+
+    // content
+    event.parentNode.children[2+1].classList.toggle('editable');
+    event.parentNode.children[2+1].toggleAttribute('contenteditable');
 
     // Saves contents when done and controls context of edit/done button
     if (!event.parentNode.children[0].isContentEditable) {
         // not editable anymore
-        event.parentNode.children[4].textContent = "Edit";
+        event.parentNode.children[4+1].textContent = "Edit";
         
         // Push to local storage
         let post = {
             // select the child
             title: event.parentNode.querySelector('h2').textContent,
+            author: event.parentNode.querySelector('.author').textContent,
             date: event.parentNode.querySelector('.date').textContent,
             summary: event.parentNode.querySelector('.summary').textContent,
             id: event.parentNode.id
         };
         editPostStorage(post);
     } else {
-        event.parentNode.children[4].textContent = "Done";
+        event.parentNode.children[4+1].textContent = "Done";
     }
 }
 
